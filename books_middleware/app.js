@@ -47,6 +47,14 @@ app.post('/books',(req,res)=>{
 })
 
 
+app.delete('/books/:id',(req,res)=>{
+
+    const userId = users.filter((user)=>{return user.id.id!==req.params.id});
+
+    res.send(userId);
+
+})
+
 
 
 app.listen(2345,(req,res)=>{
