@@ -1,0 +1,13 @@
+show dbs -show available databases
+use assignment - creating assignment database
+createCollection(users) - creating user collection
+db.users.insert({}) - inserting single document in collection
+db.users.insertMany([{},{},..]) - inserting many documents in collection
+db.users.find() - reading all documents of collection
+db.users.findOne() - reading single document of collection
+
+db.users.update({finding documet},{$set:{update fields}})
+db.users.updateMany({gender:"Male"},{$set{gender:"Malem"}})
+db.users.remove({id:})
+db.user.deleteOne({gender:"Female"})
+db.user.deleteMany({gender:"Male"})

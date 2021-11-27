@@ -8,7 +8,7 @@ app.use(express.json());
 
 const logger = (req,res,next)=>{
     const user = users.filter((user)=>req.params.name===user.author_name);
-   
+   console.log("middleware")
     res.json([{"api_requested by":req.params.name}, {"book":`${user[0].book_name}`}]);
     next();
 }
@@ -25,6 +25,7 @@ app.get('/books/:id',(req,res)=>{
 
 app.get('/:name',logger,(req,res)=>{
     
+    console.log("YES");
 })
 
 app.patch('/books/:id',(req,res)=>{
