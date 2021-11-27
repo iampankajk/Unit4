@@ -6,6 +6,12 @@ const app = express();
 
 app.use(express.json());
 
+const logger = (req,res,next)=>{
+    const user = users.filter((user)=>req.params.name===user.author_name);
+   
+    res.json([{"api_requested by":req.params.name}, {"book":`${user[0].book_name}`}]);
+    next();
+}
 
 app.get('/',(req,res)=>{
     res.send(users);
@@ -15,6 +21,10 @@ app.get('/books/:id',(req,res)=>{
     const userId = users.filter((user)=>{return user.id.id===req.params.id});
 
     res.send(userId);
+});
+
+app.get('/:name',logger,(req,res)=>{
+    
 })
 
 app.patch('/books/:id',(req,res)=>{
