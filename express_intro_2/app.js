@@ -13,6 +13,19 @@ app.use(express.json())
 3. create model for schema
 */
 
+
+// for version 5.11.14
+
+// const connect = ()=>{
+//     return mongoose.connect("mongodb://127.0.0.1:27017/test",{
+//         useNewUrlParser:true,
+//         useCreateIndex:true,
+//         useUnifiedTopology:true,
+//     })
+// }
+
+
+
 // step 1
 const connect = () => {
     return mongoose.connect("mongodb://127.0.0.1:27017/test");
@@ -32,9 +45,12 @@ const userSchema = new mongoose.Schema({
 
 const User = mongoose.model("user", userSchema);
 
-app.post('/users', (req, res) => {
-    const newUser = [...users, req.body];
-    res.send(newUser);
+
+
+app.post('/users', async (req, res) => {
+    const user = await User.create(req.body);
+
+    res.status(201).send(user);
 });
 
 
