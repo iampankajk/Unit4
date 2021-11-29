@@ -10,10 +10,10 @@ const connect = () => {
 }
 
 const movieSchema = new mongoose.Schema({
-    movie_name: { type: String, require: true },
-    movie_genre: { type: String, require: true },
-    production_year: { type: Number, require: true },
-    budget: { type: Number, require: true }
+    movie_name: { type: String, required: true },
+    movie_genre: { type: String, required: true },
+    production_year: { type: Number, required: true },
+    budget: { type: Number, required: true }
 },{
     versionKey:false
 });
