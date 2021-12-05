@@ -1,40 +1,36 @@
+const express = require('express');
+const authenticate = require('../middleware/authenticate');
 const Post = require('../models/post.model');
-const User = require('../models/user.model');
-const {body,validationResult} = require('express-validator');
+const router = express.Router();
 
-
-const post = async (req,res)=>{
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
-    }
+router.post("/",authenticate,async (req,res)=>{
     try {
-        let user = await User.findById(req.body.user_id);
-        if(!user) return res.status(500).send({Status:"Failed",message:"Please register"});
-       
-        const newPost = await Post.create(req.body);
-        res.send(newPost);
+        const user = req.user;
+        const post =await Post.create({
+            title:req.body.title,
+            body:req.body.body,
+            user_id:user.user._id
+        });
+        res.send(post);
 
     } catch (e) {
-        res.status(500).send({Status:"Failed",message:e.message})
+        return res.status(500).send({Status:"Failed",message:e.message});
     }
-}
+});
 
-const getAllPosts = async (req,res)=>{
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
-    }
+router.get("/",authenticate,async(req,res)=>{
+
     try {
-        let user = await User.findById(req.body.user_id);
-        if(!user) return res.status(500).send({Status:"Failed",message:"Please register"});
-       
-        const posts = await Post.find().populate("user_id").lean().exec();
-        res.send(posts);
+        const user = req.user;
+        const posts = await Post.find().lean().exec();
+
+        res.send({posts,user});
+        
 
     } catch (e) {
-        res.status(500).send({Status:"Failed",message:e.message})
+        return res.status(500).send({Status:"Failed",message:e.message});
     }
-}
 
-module.exports = {post,getAllPosts}
+})
+
+module.exports = router;
