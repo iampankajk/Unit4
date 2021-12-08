@@ -20,7 +20,6 @@ passport.serializeUser(function ({ user, token }, done) {
   });
 
 app.post("/signup",
-body("name").notEmpty(),
 body("email").isEmail(),
 body("password").isLength({min:8}).isStrongPassword().withMessage("write strong password, Use at least 1 uppercase,lowercase,number,and symbol with min 8 length of password"),
 signup);
@@ -34,6 +33,8 @@ app.get('/auth/google',
   passport.authenticate('google', { scope:
       [ 'email', 'profile' ] }
 ));
+
+app.use("/",productController);
 
 app.get(
     "/auth/google/callback",
