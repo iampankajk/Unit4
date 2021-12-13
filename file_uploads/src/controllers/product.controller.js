@@ -1,8 +1,16 @@
 const express = require('express');
 
+
 const upload = require('../middleware/upload');
 const Product = require('../models/product.model');
 const router = express.Router();
+
+const bodyParser = require('body-parser')
+
+const jsonParser = bodyParser.json()
+const urlencodedParser = bodyParser.urlencoded({ extended: false })
+
+
 
 router.post('/', upload.single("productImage"), async(req,res)=>{
     try{
@@ -13,6 +21,18 @@ router.post('/', upload.single("productImage"), async(req,res)=>{
         });
 
         res.send(product);
+    }
+    catch(e){
+        return res.send(500).send({status:"Failed",message:e.message});
+    }
+})
+router.get('/', upload.single("productImage"), async(req,res)=>{
+    try{
+        const products = await Product.find().lean().exec();
+
+        res.render("index",{
+            products,
+        });
     }
     catch(e){
         return res.send(500).send({status:"Failed",message:e.message});
