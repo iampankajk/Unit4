@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>booking Summary</title>
+    <link rel="stylesheet" href="css/bookingSummary.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+        
+        <style>
+            body {
+    background: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+}
+
+.ranCarnav {
+    display: flex;
+    justify-content: center;
+    background: black;
+    color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    box-shadow: 0 8px 10px 1px rgb(0 0 0 / 14%), 0 3px 14px 2px rgb(0 0 0 / 12%), 0 5px 5px -3px rgb(0 0 0 / 20%);
+
+}
+
+.navArrow {
+    width: 2%;
+    text-align: bottom;
+    margin-left: 1%;
+}
+
+.blackNav {
+    width: 95%;
+    margin-left: 1%;
+}
+
+#carNav {
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 0%
+}
+
+.navDate {
+    display: flex;
+    margin-top: 0%;
+}
+
+.ranBigContainer {
+    width: 100%;
+    margin-top: 3%;
+
+}
+
+.ranContainer {
+    width: 60%;
+    margin: auto;
+    height: 100%;
+}
+
+.ranHome {
+    margin-top: 50px;
+    font-family: sans-serif;
+    font-weight: 600;
+}
+
+.ranDelivery {
+    display: flex;
+    width: 100%;
+    margin-bottom: 0;
+    color: grey;
+    margin-left: 3%;
+}
+
+.ranDelivery input {
+    margin-left: 50%;
+    align-items: right;
+    margin-top: 15px;
+    width: 5%;
+}
+
+.ranDelivery #peace {
+    margin-left: 46%;
+}
+
+.HD p {
+    color: #e02d2d;
+    font-family: sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    margin-top: 0;
+    margin-left: 5%;
+}
+
+.ranAddon {
+    margin-top: 20px;
+    font-family: sans-serif;
+    font-weight: 600;
+}
+
+.randamage {
+    width: 100%;
+    margin-left: 3%;
+    font-weight: 500;
+}
+
+.randamage p {
+    margin-top: 0%;
+}
+
+.damageText {
+    font-family: sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    letter-spacing: 0.4px;
+    color: #1f1f1f;
+    overflow-y: hidden;
+
+}
+
+.ranStd {
+    margin-left: 4%;
+    width: 100%;
+
+}
+
+.ranStd h4 {
+    color: #10a310;
+    margin-top: 0%;
+}
+
+.ranStd p {
+    margin: 0%;
+    color: #a8a8a8;
+}
+
+.ranInstruction {
+    width: 100%;
+    height: 350px;
+    margin-top: 2%;
+    margin-left: 3%;
+}
+
+.ranInstruction h4 {
+    color: #a8a8a8;
+    font-size: 16px;
+    margin-bottom: 0%;
+}
+
+.ranInstruction p {
+    margin-top: 0%;
+    font-size: 12px;
+}
+
+.ranDelivery p {
+    margin-top: 2%;
+}
+
+#ranCheckout {
+    width: 100%;
+   
+    background: #fff;
+    padding: 4px 4px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    box-shadow: 0 6px 8px 1px rgb(0 0 0 / 14%), 0 3px 14px 2px rgb(0 0 0 / 12%), 0 2px 2px -3px rgb(0 0 0 / 20%);
+}
+
+#ranCarPrice {
+    display: inline-block;
+    width: 35%;
+    text-align: right;
+    padding: .3%;
+    margin-left: 18px;
+}
+
+.ranPromo {
+    display: inline-block;
+    width: 40%;
+    text-align: center;
+
+}
+
+.ranPromo button {
+    padding: .5%;
+    width: 30%;
+    background-color: #fff;
+    border: none;
+
+}
+
+.ranCheckoutSummary {
+    width: 100%;
+    text-align: center;
+  
+
+}
+
+.ranCheckoutSummary button {
+    border: none;
+    background: #10a310;
+    width: 50%;
+    padding: 1.5%;
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16px;
+    letter-spacing: 0.8px;
+    color: #fff;
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 6px;
+}
+
+.ranCarData {
+    display: inline-block;
+    margin-top: 5%;
+    width: 100%;
+}
+
+#ranRightData {
+    display: inline-block;
+    margin-top: 3%;
+    width: 48%;
+    height: 80%;
+    justify-content: center;
+}
+
+#ranRightData img {
+    width: 50%;
+    height: 30%;
+    padding: 2%;
+    margin-left: 3%;
+
+}
+
+#ranLeftData {
+    display: inline-block;
+    margin-top: 3%;
+    width: 48%;
+    height: 80%;
+    justify-content: center;
+
+}
+
+#ranLeftData div {
+    width: 80%;
+    height: 100%;
+    padding: 1%;
+    margin-left: 6%;
+}
+
+.ranAddress {
+    margin-top: 5%;
+    width: 100%;
+}
+
+#ranPickup {
+
+    width: 80%;
+    margin-left: 3%;
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+
+}
+
+.ranDropoff {
+    width: 100%;
+    margin-left: 3%;
+    font-family: sans-serif;
+    font-weight: 500;
+}
+
+.ranKm {
+    width: 100%;
+    margin-left: 3%;
+    font-family: sans-serif;
+    font-weight: 500;
+}
+
+.ranRating {
+    width: 100%;
+    margin-left: 3%;
+    font-family: sans-serif;
+    font-weight: 500;
+}
+        </style>
+</head>
+
+<body>
+    <div class="ranCarnav">
+    
+  <a href="http://localhost:4500/cars">
+ 
+            <div class="navArrow">
+              
+                <i class="fas fa-arrow-left"></i>
+            </div>
+        </a>
+        
+
+        <div class="blackNav">
+            <div id="carNav">
+                <h4>
+                    <%= car.name %>
+                </h4>
+            </div>
+            <div class="navDate">
+                <div id="navStart">
+
+                </div>
+                <div class="navArrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                <div id="navEnd">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class=ranBigContainer>
+        <div class="ranContainer">
+            <div class="ranCarData">
+                <div id="ranLeftData">
+                    <div>
+                        <h4>
+                            <%= car.name %>
+                        </h4>
+                        <h4>
+                            <%= car.fuel %>
+                        </h4>
+                    </div>
+
+
+                </div>
+                <div id="ranRightData">
+                    <img src="<%= car.img %>" alt="<%= car.name %>"
+                </div>
+
+           </div>
+                <div class="ranAddress">
+                    <div class="ranPickup" id="ranPickup">
+
+                    </div>
+                    <div class="ranDropoff" id="ranDropoff">
+
+                    </div>
+                    <div class="ranKm">
+                        <h4> 66 Kms without Fuel </h4>
+                    </div>
+                    <div class="ranRating" id="ranRating">
+                        <h4>
+                            ⭐⭐⭐⭐⭐ <%= car.Rating %>
+                        </h4>
+                    </div>
+
+                </div>
+                <div class="ranHome">
+                    &nbsp; &nbsp; &nbsp; Home Delivery
+                    <div class="ranDelivery">
+                        <p> <i class="fas fa-truck"></i> &nbsp; &nbsp;Delivery and Pick Up</p>
+                        <input type="checkbox">
+                    </div>
+                    <div class="HD">
+                        <p>HD option available for bookings starting at-least 3 hours after the current time. </p>
+                    </div>
+
+                </div>
+
+                <div class="ranAddon">
+                    &nbsp; &nbsp; &nbsp; &nbsp;Add Ons
+                    <div class="ranDelivery">
+                        <p> <i class="fas fa-trophy"></i> &nbsp; &nbsp;Become Supermiler Elite for ₹999</p>
+
+                    </div>
+                    <div class="HD">
+                        <p>Get Benefit of Free Home Delivery, Cancellation and extra Z-Points.</p>
+                    </div>
+
+                </div>
+
+                <div class="ranAddon">
+                    &nbsp; &nbsp; &nbsp; &nbsp;
+                    Damage Protection Packages
+
+                    <div class="ranStd">
+                        <div class="ranDelivery">
+                            <p> <i class="fas fa-circle"></i> &nbsp; &nbsp; Standard (₹137)</p>
+                            <input type="checkbox">
+                        </div>
+
+                        <p>You pay up to INR 1499 in case of any damage</p>
+                        <h4>RECOMMENDED FOR YOU </h4>
+                    </div>
+                    <div class="ranStd">
+                        <div class="ranDelivery">
+                            <p> <i class="fas fa-circle"></i> &nbsp; &nbsp; Peace of Mind (₹259)</p>
+                            <input type="checkbox" id="peace">
+                        </div>
+                        <p>You pay up to INR 249 in case of any damage</p>
+                    </div>
+
+                </div>
+                <div class="randamage">
+                    <br>
+                    How Damage Protection Works?
+                    <p class="damageText">
+                        Incase of accidents or any damage to the car, Zoomcar will take care of the expenses. You
+                        pay the minimum amount as per the package and we take care of the rest. Higher the package
+                        you select, lower the risk at your end for any damage. Please note that this is applicable
+                        solely in the case of damage to the vehicle and does not cover for any other third party
+                        loss.
+                    </p>
+
+                </div>
+
+                <div class="ranInstruction">
+                    Keep In Mind
+                    <h4> <i class="far fa-address-card"></i> &nbsp;&nbsp;Driving Licence Mandatory </p>
+                        <h4> <i class="fas fa-gas-pump"></i> &nbsp; Fare and Fuel</h4>
+                        <p>Fare is inclusive of all taxes. Excess charge ₹10/km. Kindly return the car at the same fuel
+                            level as the trip start time</p>
+                        <h4> <i class="fas fa-truck"></i> &nbsp; Cancellation Policy </h4>
+                        <div class="content-sub-text">Hassle free cancellations and refunds at nominal charges</div>
+
+
+                </div>
+
+            </div>
+
+
+            <div id="ranCheckout">
+                <div id="ranCarPrice">
+                    <h3>
+                        <%= car.price %>
+                    </h3>
+                </div>
+                <div class="ranPromo">
+                    <a href="#"> <button> <i class="fas fa-percentage"></i> Apply Coupon</button></a>
+                </div>
+
+                <div class="ranCheckoutSummary">
+                    <!-- <a href=checkout.ejs"> <button>CHECKOUT SUMMARY</button></a> -->
+                    <!-- window.location.href="<% http://localhost:4500/checkout %>" -->
+                    <a href="/cars/<%=car._id%>/checkout">
+                     <button>CHECKOUT SUMMARY</button></a>
+                    
+                </div>
+            </div>
+
+        </div>
+
+</body>
+
+</html>
+<script src="js/bookingSummary.js"></script>
